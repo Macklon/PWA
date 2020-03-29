@@ -1,22 +1,3 @@
-#FROM node:10
-
-# Create app directory
-#WORKDIR /usr/src/app
-
-# Install app dependencies
-#COPY package*.json ./
-
-# Bundle app source
-#COPY . .
-
-#RUN npm install
-
-#EXPOSE 8080
-
-#CMD [ "npm", "start" ]
-
-
-
 FROM node:10-alpine
 
 # Create app directory
