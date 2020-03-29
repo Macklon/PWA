@@ -2,7 +2,7 @@
 
 ## DOCKER COMMANDS
 
-**GET THE CURRENTLY INSTALLED VERSION OF DOCKER**
+- **GET THE CURRENTLY INSTALLED VERSION OF DOCKER**
 ```powershell
 > docker version
 ```
@@ -36,7 +36,7 @@ Server: Docker Engine - Community
   GitCommit:        fec3683
 ```
 
-**BUILD AN IMAGE FROM A DOCKER FILE**
+- **BUILD AN IMAGE FROM A DOCKER FILE**
 ```powershell
 > docker build -t pwa-tb .
 ```
@@ -92,7 +92,7 @@ All files and directories added to build context will have '-rwxr-xr-x' permissi
 It is recommended to double check and reset permissions for sensitive files and directories.
 ```
 
-**LIST ALL THE LOCALLY STORED DOCKER IMAGES**
+- **LIST ALL THE LOCALLY STORED DOCKER IMAGES**
 ```powershell
 > docker images
 ```
@@ -102,7 +102,7 @@ pwa-tb              latest              123d5f2e3a08        22 seconds ago      
 node                10-alpine           34a10d47f150        5 days ago          83.5MB
 ```
 
-**CREATE DOCKER CONTAINER FROM AN IMAGE**
+- **CREATE DOCKER CONTAINER FROM AN IMAGE**
 ```powershell
 > docker run -it -d -p 8080:8080 pwa-tb
 ```
@@ -110,7 +110,7 @@ node                10-alpine           34a10d47f150        5 days ago          
 68158d1c757ef56406190821c4005304823b4a2b63069aa624cc01cd92466622
 ```
 
-**LIST ALL THE RUNNING AND EXITED CONTAINERS**
+- **LIST ALL THE RUNNING AND EXITED CONTAINERS**
 ```powershell
 > docker ps -a
 ```
@@ -120,17 +120,17 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 e0ac97f68a3a        pwa-tb              "docker-entrypoint.s…"   5 minutes ago       Exited (0) 2 minutes ago                            sharp_dirac
 ```
 
-**SAVE THE SPECIFIED IMAGE INTO TAR FILE**
+- **SAVE THE SPECIFIED IMAGE INTO TAR FILE**
 ```powershell
 > docker save -o 1rz18mca11.tar pwa-tb
 ```
 
-**DELETE ALL IMAGES**
+- **DELETE ALL IMAGES**
 ```powershell
 > docker rmi $(docker images -a -q)
 ```
 
-**DELETE ALL CONTAINERS**
+- **DELETE ALL CONTAINERS**
 ```powershell
 > docker rm $(docker ps -a -q)
 ```
