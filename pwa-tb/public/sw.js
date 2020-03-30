@@ -4,8 +4,12 @@ const FILES_TO_CACHE = [
 	   '/index.html',
 		'/offline.html',
 		'/script.js',
+    'bootstrap/css/bootstrap.min.css',
+    'bootstrap/js/bootstrap.min.js',
+    'bootstrap/js/jquery.js',
 	];
 
+// INSTALL EVENT
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -14,7 +18,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-
+// FETCH EVENT
 self.addEventListener('fetch', (event) => {
   if(!navigator.onLine && event.request.url.indexOf('index.html') !== -1) {
     event.respondWith(showOfflineLanding(event));
@@ -39,3 +43,8 @@ function pullFromCache(event) {
       });
   });
 }
+
+// ACTIVATE EVENT
+self.addEventListener('activate', (event) => {
+  console.log('Service Worker Activated');
+});

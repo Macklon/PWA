@@ -7,6 +7,7 @@
 "background_color": "white",   
 "theme_color": "black",
 "description": "Analytical app", 
+
  "icons": [{
     "src": "images/app-icon48.png",
     "sizes": "48x48",
@@ -36,6 +37,7 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
+ 
   "prefer_related_applications": false,
   "orientation": "portrait"
 }

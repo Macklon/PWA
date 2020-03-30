@@ -9,7 +9,7 @@ COPY package.json /usr/src/app/
 RUN npm install
 RUN export NODE_PATH='/usr/local/lib/node_modules'
 
-# Bundle app source
+# Copy app source
 COPY . /usr/src/app
 
 EXPOSE 8080

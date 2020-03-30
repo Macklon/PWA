@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>COVID-19</title>
-	<script src="/script.js"></script>
+	<script src="script.js"></script>
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
-	<!-- JS, Popper.js, and jQuery -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!-- JS, jQuery -->
+	<script src="bootstrap/js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- Zing Chart cdn -->
-    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-    <!-- AJAX -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://cdn.zingchart.com/zingchart.min.js"></script> -->
+  	<!-- AJAX -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
 	<!-- MANIFEST -->
 	<link rel="manifest" href="/manifest.json">
@@ -23,30 +22,57 @@
 	<meta name="theme-color" content="black"/>
 	<meta charset="utf-8"> 
 	<meta name="mobile-web-app-capable" content="yes">
-	<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="COVID-19">
-	<!-- <meta name="apple-mobile-web-app-title" content="COVID-19"> -->
+	<meta name="apple-mobile-web-app-title" content="COVID-19">
 	<meta name="msapplication-starturl" content="/index.html">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-	<div class="container  mt-3">
-		<!-- TITLE -->
-		<h1 class="text-center">COVID-19</h1>
-		<h3 class="text-center mb-5">Spread of Coronavirus in INDIA</h3>
+	
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+	  <a class="navbar-brand" href="#">
+	    <img src="images/app-icon48.png" width="30" height="30" class="d-inline-block align-top" alt="">
+	    COVID-19
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
 
-		<!-- STATUS -->
-		<div class="row">
+	  <!-- LEFT MENU -->
+	  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+	    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+		  <li class="nav-item">
+		    <a class="nav-link active text-white" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link text-white" id="pills-prevention-tab" data-toggle="pill" href="#pills-prevention" role="tab" aria-controls="pills-prevention" aria-selected="false">Prevention</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link text-white" id="pills-help-tab" data-toggle="pill" href="#pills-help" role="tab" aria-controls="pills-help" aria-selected="false">Help</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+
+	<div class="tab-content" id="pills-tabContent">
+<!-- HOME PAGE-->
+		<div class="tab-pane fade show active container" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+			<h3 class="text-center mb-4">Spread of Coronavirus in INDIA</h3>
+
+			<!-- STATUS BAR -->
+			<div class="jumbotron row">
 				<div class="col-md-4">
 					<div class="card text-center text-white  border-0">
 					  	<div class="card-header bg-dark">
 					  		<h5 class="card-title">INFECTED</h5>
 					  	</div>
 					  	<div class="card-body">
-					    	<h3 class="card-title text-secondary">560</h3>
+					    	<h3 class="card-title text-secondary">901</h3>
 					  	</div>
 					</div>
-			</div>
+				</div>
 
 				<div class="col-md-4">
 					<div class="card text-center text-white  border-0">
@@ -54,293 +80,88 @@
 					  		<h5 class="card-title">DEATHS</h5>
 					  	</div>
 					  	<div class="card-body">
-					    	<h3 class="card-title text-secondary">12</h3>
+					    	<h3 class="card-title text-secondary">27</h3>
 					  	</div>
 					</div>
-			</div>
+				</div>
 				<div class="col-md-4">
 					<div class="card text-center text-white  border-0">
 					  	<div class="card-header bg-dark">
 					  		<h5 class="card-title">CURED</h5>
 					  	</div>
 					  	<div class="card-body">
-					    	<h3 class="card-title text-secondary">100</h3>
+					    	<h3 class="card-title text-secondary">96</h3>
 					  	</div>
 					</div>
 				</div>
+			</div>
+
+			<!-- GRAPHS -->
+			<!-- <div class="row">
+			    <div class="col-6 border border-dark p-4">
+			        <div class="" id="myPie"></div>
+			    </div>
+			    <div class="col-6 border border-dark p-4">
+			        <div class="" id="myBar"></div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col-12 border border-dark p-4">
+			        <div class="" id="myLine"></div>
+			    </div>
+			</div> -->
+		</div>
+		  
+<!-- PREVENTION PAGE -->
+		<div class="tab-pane fade container" id="pills-prevention" role="tabpanel" aria-labelledby="pills-prevention-tab">
+			<img  src="" alt="">
+			<div class="" aria-level="2" role="heading">DO THE FIVE</div>
+			<div class="">Help stop coronavirus</div>
+			<ol>
+				<li><span class="">HANDS </span><span class="">Wash them often</span></li>
+				<li>
+				<span class="">ELBOW </span><span class="">Cough into it</span></li>
+			
+				<li>
+				<span class="">FACE </span><span class="">Don't touch it</span></li>
+			
+				<li>
+				<span class="">SPACE </span><span class="">Keep safe distance</span></li>
+		
+				<li>
+				<span class="">HOME </span><span class="">Stay if you can</span></li>
+			</ol>
+			<hr>
+			<p>There’s currently no vaccine to prevent coronavirus disease (COVID-19).</p>
+			<hr>
+
+			<p>You can protect yourself and help prevent spreading the virus to others if you:</p>
+			<p>Do</p>
+			<li>Wash your hands regularly for 20 seconds, with soap and water or alcohol-based hand rub</li>
+			<li>Cover your nose and mouth with a disposable tissue or flexed elbow when you cough or sneeze</li>
+			<li>Avoid close contact (1 meter or 3 feet) with people who are unwell</li>
+			<li>Stay home and self-isolate from others in the household if you feel unwell</li>
+			<br>
+			<p>Don't</p>
+			<li>Touch your eyes, nose, or mouth if your hands are not clean</li>
 		</div>
 
-		<!-- BUTTONS -->
-		<div class=" jumbotron row text-center">
-		    <div class="col-md-4">
-		      <button type="button" class="btn btn-secondary btn-lg">NEWS</button>
-		    </div>
-		    <div class="col-md-4">
-		      <a href="prevention.html"><button type="button" class="btn btn-secondary btn-lg">PRECAUTIONS</button></a>
-		    </div>
-		    <div class="col-md-4">
-		      <a href="help.html"><button type="button" class="btn btn-secondary btn-lg">HELPLINE NO.</button></a>
-		    </div>
+<!-- HELPLINE NO. PAGE -->
+		<div class="tab-pane fade container jumbotron" id="pills-help" role="tabpanel" aria-labelledby="pills-help-tab">
+			<div class="form-group">
+			    <label for="comment-text">Your Queries</label>
+			    <textarea class="form-control" id="comment-text" rows="3"></textarea>
+		  	</div>
+			<button id="commentBtn" class="btn btn-secondary">Leave a comment</button> 
+
+			<div id="no-connection-message" style="display: none;">        
+				<h2>Arrrgh! Looks like you have no connection. We'll try posting your message again when you're back online!</h2> 
+			</div>
 		</div>
 
-		<!-- GRAPHS -->
-		<div class="row">
-		    <div class="col-6 border border-dark p-4">
-		        <div class="" id="myPie"></div>
-		    </div>
-		    <div class="col-6 border border-dark p-4">
-		        <div class="" id="myBar"></div>
-		    </div>
-		</div>
-		<div class="row">
-		    <div class="col-12 border border-dark p-4">
-		        <div class="" id="myLine"></div>
-		    </div>
-		</div>
 	</div>
-
- 	<script>
-        var state ={    
-            'items':[],
-            'values':[],
-        }
-
-        var dataURL = `catResults/`
-
-        $.ajax({
-            method:'GET',
-            url:dataURL,
-            success:function(response){
-                console.log('RESPONSE:', response)
-                for (var i in response){
-
-                    var key = Object.keys(response[i])[0]
-                    var value = Object.values(response[i])[0]
-
-                    state.items.push(key)
-                    state.values.push(value)
-                }
-
-                console.log('STATE:', state)
-                buildChart()
-
-            }
-        })
-
-        function buildChart(){
-                var chartData = {
-                  type: 'pie',
-                  // backgroundColor: 'gray',
-                  borderRadius: '5px',
-                  plot: {
-                    tooltip: {
-                      rules: [
-                        {
-                          text: '%v People',
-                          borderRadius: '4px',
-                          rule: '%i == 0',
-                          shadow: false
-                        }
-                      ]
-                    },
-                    valueBox: {
-                        placement: 'out',
-                        text: '%t\n%npv%',
-                        fontFamily: "Open Sans"
-                      },
-                    animation: {
-                      effect: 'ANIMATION_EXPAND_LEFT',
-                      sequence: 'ANIMATION_BY_PLOT_AND_NODE'
-                    },
-                    refAngle: 270,
-                    slice: '50%'
-                  },
-                  plotarea: {
-                    margin: 'dynamic'
-                  },
-                  labels: [
-                    {
-                      text: 'Visitors Class',
-                      // alpha: 0.7,
-                      anchor: 'c',
-                      fontColor: '#7E7E7E',
-                      fontSize: '30px',
-                      textAlign: 'center',
-                      x: '50%',
-                      y: '50%'
-                    }
-                  ],
-                  series: [
-                    {
-                      values:[state.values[0]],
-                      backgroundColor: 'orange',
-                      borderWidth: '0px',
-                      text: "Known People",
-                      slice: 105
-                    },
-                    {
-                      values:[state.values[1]],
-                      text: "Unknown People",
-                      backgroundColor: 'red',
-                      borderWidth: '0px',
-                      slice: 105
-                    }
-                  ]
- 			}
-
-
-            zingchart.render({
-              id: "myPie",
-              data: chartData,
-            });
-        }    
-	</script>
-    <script>
-        var stateB ={    
-            'items':[],
-            'values':[],
-        }
-
-        var dataURL = `countResults/`
-
-        $.ajax({
-            method:'GET',
-            url:dataURL,
-            success:function(response){
-                console.log('RESPONSE:', response)
-                for (var i in response){
-
-                    var key = Object.keys(response[i])[0]
-                    var value = Object.values(response[i])[0]
-
-                    stateB.items.push(key)
-                    stateB.values.push(value)
-                }
-
-                console.log('STATE:', stateB)
-                buildBarChart()
-
-            }
-        })
-
-        function buildBarChart(){
-                var chartData = {
-                "type":"bar",
-                "title": {
-                    "text": "Visitor Count",
-                    "font-size": "24px",
-                    "font-color": "gray",
-                    "adjust-layout":true
-                },
-                "plot": {   
-                    "bars-space-left":0.15,
-                    "bars-space-right":0.15,
-                    "animation": {
-                        "effect": "ANIMATION_SLIDE_BOTTOM",
-                        "sequence": 0, 
-                        "speed": 800,
-                        "delay": 800
-                    }
-                },
-                "scale-y": {
-                    "line-color": "#7E7E7E",
-                    "item": {
-                        "font-color": "#7e7e7e"
-                    },
-                    "values": "0:10:1",
-                    "guide": {
-                        "visible": true
-                    },
-                    "label": {
-                      "text": "No of Visitors Per day",
-                      // "font-family": "arial",
-                      "bold": true,
-                      "font-size": "14px",
-                      "font-color": "#7E7E7E",
-                    },
-                },
-                "plotarea": {
-                "margin": "dynamic"
-            },
-                "borderRadius": '5px',
-                "scale-x":{
-                    "values":stateB.items
-                },
-                "series":[
-                    {
-                        "values":stateB.values,
-                        "background-color": "#FF4500",
-                    }
-                ]
-            }
-
-
-            zingchart.render({
-              id: "myBar",
-              data: chartData,
-            });
-        }    
-	</script>
-	<script>
-        var stateL ={    
-            'items':[],
-            'values':[],
-        }
-
-        var objId = "1"
-
-        var dataURL = `resultsAll/${objId}/`
-
-        $.ajax({
-            method:'GET',
-            url:dataURL,
-            success:function(response){
-                console.log('RESPONSE:', response)
-                for (var i in response){
-
-                    var key = Object.keys(response[i])[0]
-                    var value = Object.values(response[i])[0]
-
-                    stateL.items.push(key)
-                    stateL.values.push(value)
-                }
-
-                console.log('STATE:', stateL)
-                buildLineChart()
-
-            }
-        })
-
-        function buildLineChart(){
-                var chartData = {
-                "type":"line",
-                "title": {
-                    "text": "Visitors Activity",
-                    "font-size": "24px",
-                    "font-color": "gray",
-                    "adjust-layout":true
-                },
-                "plotarea": {
-                "margin": "dynamic 45 60 dynamic",
-            },
-                "borderRadius": '5px',
-                "scale-x":{
-                    "values":stateL.items
-                },
-                "series":[
-                    {
-                        "values":stateL.values,
-                        "line-color": "#FF4500",
-                    }
-                ]
-            }
-
-
-            zingchart.render({
-              id: "myLine",
-              data: chartData,
-            });
-        }    
-	</script>
+	<footer>
+		
+	</footer>
 </body>
 </html>
