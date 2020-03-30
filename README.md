@@ -1,9 +1,12 @@
 # PWA
 
-##DOCKER COMMANDS##
+## DOCKER COMMANDS
 
-**GET THE CURRENTLY INSTALLED VERSION OF DOCKER**
+- **GET THE CURRENTLY INSTALLED VERSION OF DOCKER**
+```powershell
 > docker version
+```
+```
 Client: Docker Engine - Community
  Version:           19.03.1
  API version:       1.40
@@ -31,10 +34,13 @@ Server: Docker Engine - Community
  docker-init:
   Version:          0.18.0
   GitCommit:        fec3683
+```
 
-
-**BUILD AN IMAGE FROM A DOCKER FILE**
+- **BUILD AN IMAGE FROM A DOCKER FILE**
+```powershell
 > docker build -t pwa-tb .
+```
+```
 Sending build context to Docker daemon  901.6kB
 Step 1/9 : FROM node:10-alpine
 10-alpine: Pulling from library/node
@@ -84,32 +90,47 @@ Successfully tagged pwa-tb:latest
 SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. 
 All files and directories added to build context will have '-rwxr-xr-x' permissions. 
 It is recommended to double check and reset permissions for sensitive files and directories.
+```
 
-
-**LIST ALL THE LOCALLY STORED DOCKER IMAGES**
+- **LIST ALL THE LOCALLY STORED DOCKER IMAGES**
+```powershell
 > docker images
+```
+```
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 pwa-tb              latest              123d5f2e3a08        22 seconds ago      87.6MB
 node                10-alpine           34a10d47f150        5 days ago          83.5MB
+```
 
-
-**CREATE DOCKER CONTAINER FROM AN IMAGE**
+- **CREATE DOCKER CONTAINER FROM AN IMAGE**
+```powershell
 > docker run -it -d -p 8080:8080 pwa-tb
+```
+```
 68158d1c757ef56406190821c4005304823b4a2b63069aa624cc01cd92466622
+```
 
-
-**LIST ALL THE RUNNING AND EXITED CONTAINERS**
+- **LIST ALL THE RUNNING AND EXITED CONTAINERS**
+```powershell
 > docker ps -a
+```
+```
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS                    NAMES
 68158d1c757e        pwa-tb              "docker-entrypoint.s…"   58 seconds ago      Up 53 seconds              0.0.0.0:8080->8080/tcp   angry_bose
 e0ac97f68a3a        pwa-tb              "docker-entrypoint.s…"   5 minutes ago       Exited (0) 2 minutes ago                            sharp_dirac
+```
 
-
-**SAVE THE SPECIFIED IMAGE INTO TAR FILE**
+- **SAVE THE SPECIFIED IMAGE INTO TAR FILE**
+```powershell
 > docker save -o 1rz18mca11.tar pwa-tb
+```
 
-**DELETE ALL IMAGES**
->docker rmi $(docker images -a -q)
+- **DELETE ALL IMAGES**
+```powershell
+> docker rmi $(docker images -a -q)
+```
 
-**DELETE ALL CONTAINERS**
->docker rm $(docker ps -a -q)
+- **DELETE ALL CONTAINERS**
+```powershell
+> docker rm $(docker ps -a -q)
+```
